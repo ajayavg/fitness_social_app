@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Feeds</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-card *ngFor="let postdata of post">
+  <ion-item>
+      <ion-avatar item-left>
+        <img src="{{ postdata.thumbnail }}">
+      </ion-avatar>
+      <h2>{{ postdata.username }}</h2>
+      <p>{{ postdata.date }} </p>
+  </ion-item>
+
+  <img src="{{ postdata.image }}">
+
+  <ion-card-content>
+    <h3>{{ postdata.title }}</h3>
+    <p style="text-align: justify">{{ postdata.post }}</p>
+    <button ion-button color="dark" outline block (click)='open(postdata.link)' >VIEW</button>  
+  </ion-card-content>
+    
+</ion-card>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <button ion-button (click)="launchPage()">Push About </button>
+  <hr>
+  <button ion-button (click)="createModal()">Create Modal </button>
+  <hr>
+  <button ion-button (click)="fetchData()">User data </button>
+  <ion-list>
+    <!--<ion-item *ngFor="let pbd of passedbackdata">
+      {{ pbd.name }}
+    </ion-item>-->
+    <!--<ion-item *ngIf="passedbackdata">
+      {{ passedbackdata.name }}
+    </ion-item>
+  </ion-list>-->
+<!--  
+  <div *ngIf="latitude != null && longitude != null">
+    Latitude : {{ latitude }}
+    <br>
+    Longitude : {{ longitude }}
+  </div>-->
+<!--</ion-content>-->-->

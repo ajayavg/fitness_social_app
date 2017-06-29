@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="yourdata">
+
+  <ion-card>
+    <div class="img-wrapper"> 
+    <img style="width: 100%; height: 150px;margin: auto;object-fit: contain;" src="{{ yourdata.profilePicURL }}"/>
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>
+      {{ yourdata.name }}
+      </ion-card-title>
+      <p>
+      {{ yourdata.bio }}
+      </p>
+    </ion-card-content>
+
+    <ion-item *ngIf="yourdata.workouts">
+        <ion-list>
+            <ion-list-header>
+                Favourite Workouts:
+            </ion-list-header>
+            <ion-item>{{ yourdata.workouts[0] }}</ion-item>
+            <ion-item>{{ yourdata.workouts[1] }}</ion-item>
+            <ion-item>{{ yourdata.workouts[2] }}</ion-item>
+        </ion-list>
+    </ion-item>
+
+    <ion-item>
+        <ion-list no-lines>
+          <ion-list-header>
+                  Followers <ion-badge item-right>{{ yourdata.followers }} </ion-badge>
+          </ion-list-header> 
+        </ion-list>
+    </ion-item>
+        
+  </ion-card>
+
+</ion-content>
